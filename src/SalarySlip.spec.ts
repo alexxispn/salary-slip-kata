@@ -1,10 +1,25 @@
 import { describe, expect, it } from "vitest";
 import { SalarySlipGenerator } from "./SalarySlipGenerator.js";
+import { Employee } from "./Employee.js";
 
 describe("SalarySlipGenerator", () => {
+  it('generates a salary with the employee info', () => {
+    const salarySlipGenerator = new SalarySlipGenerator();
+    const employee: Employee = {
+      name: "John J Doe",
+      nationalId: "12345",
+      annualGrossSalary: 5000_00
+    };
+
+    const salarySlip = salarySlipGenerator.generateFor(employee);
+
+    expect(salarySlip.hasName("John J Doe")).toBe(true);
+    expect(salarySlip.hasNationalID("12345")).toBe(true);
+  })
+
   it("generates a salary for an employee", () => {
     const salarySlipGenerator = new SalarySlipGenerator();
-    const employee = {
+    const employee: Employee = {
       name: "John J Doe",
       nationalId: "12345",
       annualGrossSalary: 5000_00
