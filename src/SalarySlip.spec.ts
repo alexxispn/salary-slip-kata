@@ -6,7 +6,7 @@ describe("SalarySlipGenerator", () => {
     const salarySlipGenerator = new SalarySlipGenerator();
     const employee = {
       name: "John J Doe",
-      nationalID: "12345",
+      nationalId: "12345",
       annualGrossSalary: 5000_00
     };
 
@@ -21,7 +21,7 @@ describe("SalarySlipGenerator", () => {
     const salarySlipGenerator = new SalarySlipGenerator();
     const lauraEscanes = {
       name: "Laura Escanes",
-      nationalID: "90000",
+      nationalId: "90000",
       annualGrossSalary: 12000_00
     };
 

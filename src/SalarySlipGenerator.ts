@@ -4,6 +4,6 @@ import { Employee } from "./Employee.js";
 export class SalarySlipGenerator {
 
   generateFor(employee: Employee): SalarySlip {
-    return new SalarySlip()
+    return new SalarySlip(employee)
   }
 }

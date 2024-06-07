@@ -1,13 +1,26 @@
+import { Employee } from "./Employee.js";
+
 export class SalarySlip {
-  hasName(name: string) {
-    return true;
+  private name: string;
+  private nationalId: string;
+  private annualGrossSalary: number;
+
+  constructor(employee: Employee) {
+    this.name = employee.name;
+    this.nationalId = employee.nationalId;
+    this.annualGrossSalary = employee.annualGrossSalary;
+  }
+
+  hasName(name: string): boolean {
+    return this.name === name;
   }
 
   hasNationalID(nationalId: string) {
-    return true;
+    return this.nationalId === nationalId;
   }
 
   hasMonthlyGrossSalary(monthlyGrossSalary: number) {
-    return true;
+    const calculatedMonthlyGrossSalary = Math.round(this.annualGrossSalary / 12)
+    return monthlyGrossSalary === calculatedMonthlyGrossSalary;
   }
 }

@@ -1,5 +1,5 @@
 export interface Employee {
-  nationalID: string;
+  nationalId: string;
   name: string;
   annualGrossSalary: number;
 }
