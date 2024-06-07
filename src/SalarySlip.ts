@@ -23,4 +23,8 @@ export class SalarySlip {
     const calculatedMonthlyGrossSalary = Math.round(this.annualGrossSalary / 12)
     return monthlyGrossSalary === calculatedMonthlyGrossSalary;
   }
+
+  hasNationalInsuranceContribution(nationalInsuranceContribution: number) {
+    throw new Error('not implemented')
+  }
 }

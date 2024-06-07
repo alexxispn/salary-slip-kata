@@ -31,4 +31,17 @@ describe("SalarySlipGenerator", () => {
     expect(salarySlip.hasNationalID("12345")).toBe(false);
     expect(salarySlip.hasMonthlyGrossSalary(416_67)).toBe(false);
   });
+
+  it('generates a salary that is subject to national insurance contributions', () =>{
+    const salarySlipGenerator = new SalarySlipGenerator();
+    const employee = {
+      name: "John J Doe",
+      nationalId: "12345",
+      annualGrossSalary: 9060_00
+    };
+
+    const salarySlip = salarySlipGenerator.generateFor(employee);
+
+    expect(salarySlip.hasNationalInsuranceContribution(10_00)).toBe(true);
+  })
 });
