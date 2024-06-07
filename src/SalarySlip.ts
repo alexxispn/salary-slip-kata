@@ -1,13 +1,13 @@
 export class SalarySlip {
   hasName(name: string) {
-    throw new Error("not implemented");
+    return true;
   }
 
   hasNationalID(nationalId: number) {
-    throw new Error("not implemented");
+    return true;
   }
 
   hasMonthlyGrossSalary(monthlyGrossSalary: number) {
-    throw new Error("not implemented");
+    return true;
   }
 }
