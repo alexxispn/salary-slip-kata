@@ -20,11 +20,16 @@ export class SalarySlip {
   }
 
   hasMonthlyGrossSalary(monthlyGrossSalary: number) {
-    const calculatedMonthlyGrossSalary = Math.round(this.annualGrossSalary / 12)
+    const calculatedMonthlyGrossSalary = Math.round(this.annualGrossSalary / 12);
     return monthlyGrossSalary === calculatedMonthlyGrossSalary;
   }
 
-  hasNationalInsuranceContribution(nationalInsuranceContribution: number) {
-    throw new Error('not implemented')
+  hasNationalInsuranceContribution(comparedNationalInsuranceContribution: number) {
+    const nationalInsuranceUpperLimit = 8060_00;
+    const exceedingAmount = this.annualGrossSalary - nationalInsuranceUpperLimit;
+    const nationalInsuranceContribution = Math.round(exceedingAmount * 0.12);
+    const monthlyNationalInsuranceContribution = nationalInsuranceContribution / 12;
+
+    return monthlyNationalInsuranceContribution === comparedNationalInsuranceContribution;
   }
 }
