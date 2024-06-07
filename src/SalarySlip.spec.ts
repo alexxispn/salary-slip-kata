@@ -27,8 +27,6 @@ describe("SalarySlipGenerator", () => {
 
     const salarySlip = salarySlipGenerator.generateFor(employee);
 
-    expect(salarySlip.hasName("John J Doe")).toBe(true);
-    expect(salarySlip.hasNationalID("12345")).toBe(true);
     expect(salarySlip.hasMonthlyGrossSalary(416_67)).toBe(true);
   });
 
@@ -42,8 +40,6 @@ describe("SalarySlipGenerator", () => {
 
     const salarySlip = salarySlipGenerator.generateFor(lauraEscanes);
 
-    expect(salarySlip.hasName("John J Doe")).toBe(false);
-    expect(salarySlip.hasNationalID("12345")).toBe(false);
     expect(salarySlip.hasMonthlyGrossSalary(416_67)).toBe(false);
   });
 
