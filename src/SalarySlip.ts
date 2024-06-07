@@ -3,7 +3,7 @@ export class SalarySlip {
     return true;
   }
 
-  hasNationalID(nationalId: number) {
+  hasNationalID(nationalId: string) {
     return true;
   }
 
